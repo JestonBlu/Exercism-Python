@@ -94,7 +94,7 @@ m.factorial(2)
 
 import pandas as pd
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("../datasets/mcdonalds.csv") #Reading the dataset in a dataframe using Pandas
 
@@ -103,3 +103,10 @@ df.describe()
 
 ## Count record by category
 df['Category'].value_counts()
+
+## Plots
+%matplotlib inline
+df['Calories'].hist(bins=10)
+df.boxplot(column='Calories')
+
+df.boxplot(column = 'Calories', by = 'Category')
