@@ -91,3 +91,15 @@ m.factorial(2)
 ##
 ## Requests
 ## for accessing the web. It works similar to the the standard python library urllib2 but is much easier to code. You will find subtle differences with urllib2 but for beginners, Requests might be more convenient.
+
+import pandas as pd
+import numpy as np
+import matplotlib as plt
+
+df = pd.read_csv("../datasets/mcdonalds.csv") #Reading the dataset in a dataframe using Pandas
+
+df.head()
+df.describe()
+
+## Count record by category
+df['Category'].value_counts()
