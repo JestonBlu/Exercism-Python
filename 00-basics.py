@@ -138,8 +138,8 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("../datasets/mcdonalds.csv") #Reading the dataset in a dataframe using Pandas
 
-df.head()
 df.describe()
+df.head()
 
 ## Count record by category
 df['Category'].value_counts()
