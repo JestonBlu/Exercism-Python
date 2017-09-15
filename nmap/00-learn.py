@@ -1,16 +1,22 @@
 import nmap
+import time
 
 nm = nmap.PortScanner()
-
 nm.scan('192.168.0.11-31')
-
 hosts = nm.all_hosts()
 
-# a more usefull example :
-for i in hosts:
-    print('----------------------------------------------------')
-    print('Host : %s (%s)' % (i, nm[i].hostname()))
-    print('State : %s' % nm[i].state())
+while True:
+    file = open("test.txt", "w")
 
+    file.write("========================\n")
 
-nm.scan(hosts='192.168.0.1/24', arguments='-n -sP -PE -PA21,23,80,3389')
+    for i in hosts:
+        file.write("\n")
+        file.write("IP    :" + i + "\n")
+        file.write("Host  :" + nm[i].hostname() + "\n")
+        file.write("State :" + nm[i].state() + "\n")
+
+    file.write("========================")
+
+    file.close()
+    time.sleep(10)
